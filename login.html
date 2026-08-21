@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in — REV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+<div class="speedlines"></div>
+
+<nav>
+  <a class="logo" href="index.html">REV<span>/</span></a>
+  <div class="navlinks">
+    <a href="index.html#catalog">Catalog</a>
+    <a href="signup.html">Create account</a>
+  </div>
+</nav>
+
+<div class="auth-wrap">
+  <div class="auth-visual">
+    <canvas id="auth-canvas"></canvas>
+    <div class="visual-copy">
+      <div class="eyebrow">Member garage</div>
+      <h2>YOUR RIDES,<br><span class="accent">SAVED.</span></h2>
+      <p>Sign in to save favorites, compare specs side by side, and pick up your 3D garage right where you left off.</p>
+    </div>
+  </div>
+
+  <div class="auth-panel">
+    <div class="auth-card">
+      <div class="eyebrow">Welcome back</div>
+      <h1>Sign in</h1>
+      <p class="sub">New to REV? <a href="signup.html">Create an account</a></p>
+
+      <div class="social-row">
+        <button class="btn-social" type="button">Google</button>
+        <button class="btn-social" type="button">Apple</button>
+      </div>
+      <div class="divider"><span>or use email</span></div>
+
+      <form id="login-form" novalidate>
+        <label class="field">
+          <span class="label">Email</span>
+          <input type="email" name="email" placeholder="you@example.com" required>
+          <span class="error" data-for="email"></span>
+        </label>
+
+        <label class="field">
+          <span class="label">Password</span>
+          <div class="pw-wrap">
+            <input type="password" name="password" placeholder="••••••••" minlength="6" required>
+            <button type="button" class="pw-toggle" aria-label="Show password">Show</button>
+          </div>
+          <span class="error" data-for="password"></span>
+        </label>
+
+        <div class="row-between">
+          <label class="check">
+            <input type="checkbox" name="remember">
+            <span>Remember me</span>
+          </label>
+          <a class="link-muted" href="#" onclick="return false;">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          <span class="btn-label">Sign in</span>
+        </button>
+      </form>
+
+      <div class="success-note" id="success-note">
+        <div class="check-icon">✓</div>
+        <div>
+          <b>Signed in.</b>
+          <p>This is a front-end demo — hook up your own auth backend to make it real.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>REV — three.js showcase</span>
+  <span>drag · scroll · click</span>
+</footer>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module" src="auth-visual.js"></script>
+<script src="auth-form.js"></script>
+</body>
+</html>
